@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import {
   CommandDialog,
@@ -33,7 +33,7 @@ const CitySearch = () => {
       country,
     });
     setOpen(false);
-    navigate(`city/${name}??lat=${lat}&lon=${lon}`);
+    navigate(`city/${name}?lat=${lat}&lon=${lon}`);
   };
   return (
     <>
@@ -55,9 +55,6 @@ const CitySearch = () => {
           {query.length > 2 && !isLoading && (
             <CommandEmpty>No Cities found.</CommandEmpty>
           )}
-          {/* <CommandGroup heading="Favorites">
-            <CommandItem>Calendar</CommandItem>
-          </CommandGroup> */}
 
           {history.length > 0 && (
             <>
